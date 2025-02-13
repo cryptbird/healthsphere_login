@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Sphere Welcome</title>
+</head>
+
+<body>
+
+    <h1>Welcome to Health Sphere</h1>
+    <form id="welcome-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        // Add event listener for form submission
+        document.getElementById('welcome-form').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            // Get form values
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+
+            // Send the data to the backend server (ensure correct port/URL)
+            try {
+                const response = await fetch('http://localhost:3000/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username, email })
+                });
+
+                // Check if the response is ok (status code 200-299)
+                if (!response.ok) {
+                    const errorResponse = await response.json();
+                    console.error('Error response:', errorResponse);
+                    alert(errorResponse.error || 'Oops! Something went wrong.');
+                } else {
+                    const result = await response.json();
+                    console.log('Success:', result);
+                    alert(result.message || 'Email sent successfully!');
+                }
+            } catch (error) {
+                // Handle network or other unexpected errors
+                console.error('Error:', error);
+                alert('There was an error with the form submission.');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

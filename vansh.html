@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Tracking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            height: 28px;
+            background-color: black;
+            border-bottom-left-radius: 24px;
+            border-bottom-right-radius: 24px;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Hero Section -->
+    <header class="bg-white">
+        <div class="container mx-auto px-4 py-16">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-gray-900 max-w-3xl">
+                Make health tracking easier with our user-friendly design
+            </h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12">
+        <div class="flex gap-16 items-start justify-center">
+            <!-- Left Side - Phone Mockup -->
+            <div class="w-[375px] flex-shrink-0">
+                <div class="bg-black rounded-[60px] p-4 aspect-[9/19] relative overflow-hidden shadow-2xl">
+                    <div class="phone-notch"></div>
+                    <div class="h-full bg-gray-900 rounded-[48px] overflow-hidden">
+                        <div class="p-4 flex items-center gap-2 bg-black text-white">
+                            <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                            <span class="text-sm" id="activeFeatureTitle">Lab Results</span>
+                        </div>
+                        <div class="p-2">
+                            <img 
+                                id="featureImage"
+                                src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=1000" 
+                                alt="Feature"
+                                class="w-full aspect-square object-cover mb-4"
+                            />
+                            <div class="flex justify-between items-center text-white text-sm px-2">
+                                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                                <span id="featureDescription">Complete Blood Count (CBC)</span>
+                                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                            </div>
+                            <div class="bg-black text-white p-4 mt-4 rounded-lg">
+                                <p class="font-semibold" id="featureTitle">Blood Test Results</p>
+                                <div id="featureDetails">
+                                    <p class="text-gray-300">Red Blood Cells: 4.5-5.5 million/mcL</p>
+                                    <p class="text-gray-300">White Blood Cells: 4,500-11,000/mcL</p>
+                                    <p class="text-gray-300">Hemoglobin: 14-17 g/dL</p>
+                                    <p class="text-gray-300">Platelets: 150,000-450,000/mcL</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Features -->
+            <div class="grid gap-4 flex-1 max-w-xl" id="features">
+                <!-- Features will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Educational Resources Section -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8">Educational Resources</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold mb-4">Understanding Medical Imaging</h3>
+                    <p class="text-gray-600 mb-4">Learn about different types of medical imaging techniques and their applications in modern medicine.</p>
+                    <iframe
+                        class="w-full aspect-video rounded-lg mb-4"
+                        src="https://www.youtube.com/embed/7y1N6VHjxGU"
+                        title="Understanding Medical Imaging"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe>
+                    <img 
+                        src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=1000" 
+                        alt="Medical Imaging Equipment"
+                        class="w-full aspect-video object-cover rounded-lg"
+                    />
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold mb-4">Patient Health Tracking</h3>
+                    <p class="text-gray-600 mb-4">Discover best practices for monitoring and managing your health data effectively.</p>
+                    <iframe
+                        class="w-full aspect-video rounded-lg mb-4"
+                        src="https://www.youtube.com/embed/fV-jzdrqHhE"
+                        title="Health Tracking Basics"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe>
+                    <img 
+                        src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1000" 
+                        alt="Health Tracking"
+                        class="w-full aspect-video object-cover rounded-lg"
+                    />
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold mb-4">Medical Data Analysis</h3>
+                    <p class="text-gray-600 mb-4">Expert insights on interpreting medical data and understanding health metrics.</p>
+                    <iframe
+                        class="w-full aspect-video rounded-lg mb-4"
+                        src="https://www.youtube.com/embed/YVHG5NvZUDg"
+                        title="Medical Data Analysis"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe>
+                    <img 
+                        src="https://images.unsplash.com/photo-1576671081837-49000212a370?auto=format&fit=crop&q=80&w=1000" 
+                        alt="Medical Data"
+                        class="w-full aspect-video object-cover rounded-lg"
+                    />
+                </div>
+            </div>
+
+            <!-- Additional Resources -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold mb-4">Preventive Healthcare</h3>
+                    <p class="text-gray-600 mb-4">Learn about preventive measures and maintaining good health.</p>
+                    <iframe
+                        class="w-full aspect-video rounded-lg mb-4"
+                        src="https://www.youtube.com/embed/B7wfp-Zq0LM"
+                        title="Preventive Healthcare"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe>
+                    <img 
+                        src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=1000" 
+                        alt="Preventive Healthcare"
+                        class="w-full aspect-video object-cover rounded-lg"
+                    />
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold mb-4">Mental Health Awareness</h3>
+                    <p class="text-gray-600 mb-4">Understanding the importance of mental health and well-being.</p>
+                    <iframe
+                        class="w-full aspect-video rounded-lg mb-4"
+                        src="https://www.youtube.com/embed/1i9OktVsTWo"
+                        title="Mental Health Awareness"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe>
+                    <img 
+                        src="https://images.unsplash.com/photo-1493836512294-502baa1986e2?auto=format&fit=crop&q=80&w=1000" 
+                        alt="Mental Health"
+                        class="w-full aspect-video object-cover rounded-lg"
+                    />
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold mb-4">Nutrition Guidelines</h3>
+                    <p class="text-gray-600 mb-4">Essential information about maintaining a balanced diet.</p>
+                    <iframe
+                        class="w-full aspect-video rounded-lg mb-4"
+                        src="https://www.youtube.com/embed/fqhYBTg73fw"
+                        title="Nutrition Guidelines"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe>
+                    <img 
+                        src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1000" 
+                        alt="Nutrition"
+                        class="w-full aspect-video object-cover rounded-lg"
+                    />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Feature data
+        const features = [
+            { 
+                icon: 'flask-round', 
+                title: "Lab Results", 
+                color: "emerald",
+                content: {
+                    image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=1000",
+                    title: "Blood Test Results",
+                    description: "Complete Blood Count (CBC)",
+                    details: [
+                        "Red Blood Cells: 4.5-5.5 million/mcL",
+                        "White Blood Cells: 4,500-11,000/mcL",
+                        "Hemoglobin: 14-17 g/dL",
+                        "Platelets: 150,000-450,000/mcL"
+                    ]
+                }
+            },
+            { 
+                icon: 'activity', 
+                title: "Symptom Tracking", 
+                color: "green",
+                content: {
+                    image: "https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?auto=format&fit=crop&q=80&w=1000",
+                    title: "Daily Symptoms Log",
+                    description: "Track your symptoms over time",
+                    details: [
+                        "Headache intensity: 2/10",
+                        "Fatigue level: Mild",
+                        "Sleep quality: Good",
+                        "Mood: Stable"
+                    ]
+                }
+            },
+            { 
+                icon: 'pill', 
+                title: "Medications", 
+                color: "blue",
+                content: {
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=1000",
+                    title: "Medication Schedule",
+                    description: "Daily Medication Tracker",
+                    details: [
+                        "Morning: Vitamin D (1000 IU)",
+                        "Afternoon: Omega-3 (1000mg)",
+                        "Evening: Multivitamin",
+                        "Before bed: Calcium (500mg)"
+                    ]
+                }
+            },
+            { 
+                icon: 'droplet', 
+                title: "Cycle Tracking", 
+                color: "rose",
+                content: {
+                    image: "https://images.unsplash.com/photo-1584362917165-526a968579e8?auto=format&fit=crop&q=80&w=1000",
+                    title: "Menstrual Cycle Tracker",
+                    description: "28-Day Cycle Overview",
+                    details: [
+                        "Current phase: Follicular",
+                        "Cycle day: 7",
+                        "Next period in: 21 days",
+                        "Last period: 7 days ago"
+                    ]
+                }
+            },
+            { 
+                icon: 'scan', 
+                title: "MRIs, X-RAYs, and CT-scans", 
+                color: "gray",
+                content: {
+                    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&q=80&w=1000",
+                    title: "CT BRAIN W/O - HEAD ST W/O",
+                    description: "Computed Tomography Scan",
+                    details: [
+                        "Body Part: HEAD",
+                        "Modality: Computed Tomography",
+                        "Slice: 1/32",
+                        "Date: 2024-03-15"
+                    ]
+                }
+            },
+            { 
+                icon: 'clipboard-list', 
+                title: "Doctor Notes", 
+                color: "slate",
+                content: {
+                    image: "https://images.unsplash.com/photo-1512678080530-7760d81faba6?auto=format&fit=crop&q=80&w=1000",
+                    title: "Recent Consultation Notes",
+                    description: "General Check-up Summary",
+                    details: [
+                        "Blood pressure: 120/80 mmHg",
+                        "Heart rate: 72 bpm",
+                        "Weight: 70 kg",
+                        "Next appointment: In 3 months"
+                    ]
+                }
+            },
+            { 
+                icon: 'gauge', 
+                title: "Device Metrics", 
+                color: "pink",
+                content: {
+                    image: "https://images.unsplash.com/photo-1557825835-70d97c4aa567?auto=format&fit=crop&q=80&w=1000",
+                    title: "Health Device Statistics",
+                    description: "Daily Health Metrics",
+                    details: [
+                        "Steps: 8,547",
+                        "Active minutes: 45",
+                        "Sleep score: 85%",
+                        "Heart rate avg: 68 bpm"
+                    ]
+                }
+            },
+            { 
+                icon: 'star', 
+                title: "Emergency Info", 
+                color: "red",
+                content: {
+                    image: "https://images.unsplash.com/photo-1587746746689-c6d6c68db333?auto=format&fit=crop&q=80&w=1000",
+                    title: "Emergency Contact Information",
+                    description: "Quick Access Emergency Details",
+                    details: [
+                        "Blood type: O+",
+                        "Allergies: Penicillin",
+                        "Emergency contact: (555) 123-4567",
+                        "Primary physician: Dr. Smith"
+                    ]
+                }
+            }
+        ];
+
+        // Function to update phone display
+        function updatePhoneDisplay(feature) {
+            document.getElementById('activeFeatureTitle').textContent = feature.title;
+            document.getElementById('featureImage').src = feature.content.image;
+            document.getElementById('featureDescription').textContent = feature.content.description;
+            document.getElementById('featureTitle').textContent = feature.content.title;
+            
+            const detailsContainer = document.getElementById('featureDetails');
+            detailsContainer.innerHTML = feature.content.details
+                .map(detail => `<p class="text-gray-300">${detail}</p>`)
+                .join('');
+        }
+
+        // Create feature buttons
+        const featuresContainer = document.getElementById('features');
+        features.forEach(feature => {
+            const button = document.createElement('div');
+            button.className = `flex items-center gap-4 p-4 rounded-xl bg-${feature.color}-50 hover:bg-${feature.color}-100 transition-all cursor-pointer`;
+            button.innerHTML = `
+                <div class="p-3 rounded-full bg-${feature.color}-100 text-${feature.color}-600">
+                    <i data-lucide="${feature.icon}" class="w-6 h-6"></i>
+                </div>
+                <span class="text-lg font-semibold text-gray-900">${feature.title}</span>
+            `;
+            
+            button.addEventListener('click', () => {
+                // Remove active state from all buttons
+                document.querySelectorAll('#features > div').forEach(btn => {
+                    btn.className = btn.className.replace('shadow-lg', '');
+                });
+                
+                // Add active state to clicked button
+                button.className += ' shadow-lg';
+                
+                // Update phone display
+                updatePhoneDisplay(feature);
+            });
+            
+            featuresContainer.appendChild(button);
+            lucide.createIcons();
+        });
+
+        // Initialize with first feature
+        updatePhoneDisplay(features[0]);
+    </script>
+</body>
+</html>
