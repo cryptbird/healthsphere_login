@@ -9,15 +9,15 @@
 
 
 
-                    document.getElementById('userBtn').addEventListener('click', function () {
-                        document.getElementById('loginForm').classList.remove('border-red-500');
-                        document.getElementById('loginForm').classList.add('border-blue-500');
-                    });
+                    // document.getElementById('userBtn').addEventListener('click', function () {
+                    //     document.getElementById('loginForm').classList.remove('border-red-500');
+                    //     document.getElementById('loginForm').classList.add('border-blue-500');
+                    // });
             
-                    document.getElementById('doctorBtn').addEventListener('click', function () {
-                        document.getElementById('loginForm').classList.remove('border-blue-500');
-                        document.getElementById('loginForm').classList.add('border-red-500');
-                    });
+                    // document.getElementById('doctorBtn').addEventListener('click', function () {
+                    //     document.getElementById('loginForm').classList.remove('border-blue-500');
+                    //     document.getElementById('loginForm').classList.add('border-red-500');
+                    // });
 
     </script>
       <style>
@@ -120,28 +120,28 @@
                 
                 <!-- Default Login Form -->
                 <form id="defaultLoginForm" class="form">
-                    <input type="email" placeholder="Enter your email" class="w-full p-2 border rounded-md mb-4">
-                    <input type="password" placeholder="Enter your password" class="w-full p-2 border rounded-md mb-4">
-                    <button class="w-full py-2 text-white bg-green-500 rounded-lg hover:bg-green-600">Login</button>
+                    <input type="email" placeholder="Enter your email" class="w-full p-2 border rounded-md mb-4" id="inUsr">
+                    <input type="password" placeholder="Enter your password" class="w-full p-2 border rounded-md mb-4" id="inPass">
+                    <button class="w-full py-2 text-white bg-green-500 rounded-lg hover:bg-green-600" id="loginbtn"> <a href="#" id="loginLabel"> Login </a></button>
                 </form>
     
                 <!-- User Registration Form -->
                 <form id="userRegisterForm" class="form hidden">
-                    <input type="text" placeholder="Enter your full name" class="w-full p-2 border rounded-md mb-4">
-                    <input type="email" placeholder="Enter your email" class="w-full p-2 border rounded-md mb-4">
-                    <input type="password" placeholder="Enter your password" class="w-full p-2 border rounded-md mb-4">
-                    <input type="text" placeholder="Enter your address" class="w-full p-2 border rounded-md mb-4">
-                    <button class="w-full py-2 text-white bg-green-500 rounded-lg hover:bg-green-600">Register as User</button>
+                    <input type="text" placeholder="Enter your full name" class="w-full p-2 border rounded-md mb-4" id="userName">
+                    <input type="email" placeholder="Enter your email" class="w-full p-2 border rounded-md mb-4" id="userEmail">
+                    <input type="password" placeholder="Enter your password" class="w-full p-2 border rounded-md mb-4" id="userPassword">
+                    <input type="text" placeholder="Enter your address" class="w-full p-2 border rounded-md mb-4" id="userAddress">
+                    <button class="w-full py-2 text-white bg-green-500 rounded-lg hover:bg-green-600" id="signupbtn"><a href="#" id="sinupLabel"> Register As User </a></button>
                 </form>
                 
                 <!-- Doctor Registration Form -->
                 <form id="doctorRegisterForm" class="form hidden">
-                    <input type="text" placeholder="Enter your full name" class="w-full p-2 border rounded-md mb-4">
-                    <input type="email" placeholder="Enter your email" class="w-full p-2 border rounded-md mb-4">
-                    <input type="password" placeholder="Enter your password" class="w-full p-2 border rounded-md mb-4">
-                    <input type="text" placeholder="Enter your specialization" class="w-full p-2 border rounded-md mb-4">
-                    <input type="text" placeholder="Enter your clinic/hospital name" class="w-full p-2 border rounded-md mb-4">
-                    <button class="w-full py-2 text-white bg-green-500 rounded-lg hover:bg-green-600">Register as Doctor</button>
+                    <input type="text" placeholder="Enter your full name" class="w-full p-2 border rounded-md mb-4" id="doctorName">
+                    <input type="email" placeholder="Enter your email" class="w-full p-2 border rounded-md mb-4" id="doctorEmail">
+                    <input type="password" placeholder="Enter your password" class="w-full p-2 border rounded-md mb-4" id="doctorPassword">
+                    <input type="text" placeholder="Enter your specialization" class="w-full p-2 border rounded-md mb-4" id="doctorSpecialisation">
+                    <input type="text" placeholder="Enter your clinic/hospital name" class="w-full p-2 border rounded-md mb-4" id="doctorHospital">
+                    <button class="w-full py-2 text-white bg-green-500 rounded-lg hover:bg-green-600" id="signupbtn1"><a href="#" id="sinupLabel"> Register As Doctor </a></button>
                 </form>
             </div>
         </div>
@@ -390,7 +390,10 @@
           </div>
         </div>
       </footer>
-
+      <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+      <script src="page0.js" type="module"></script>
         
 </body>
 </html>
